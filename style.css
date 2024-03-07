@@ -1,0 +1,123 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#7fadcd;
+    padding: 10px 20px;
+    height: 90px;
+}
+
+.logo img {
+    height: 50px; /* Adjust height as needed */
+}
+
+.navbar-items {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.navbar-item {
+    margin: 0 10px;
+}
+
+.navbar-item a {
+    text-decoration: none;
+    color: #fff;
+    color:aliceblue;
+    font-size: large;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.login, .phone-number {
+    margin-left: 20px;
+}
+.button-24 {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+  }
+  
+  .button-24:hover,
+  .button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+  }
+  
+  .button-24:active {
+    opacity: .5;
+  
+  }
+
+/* ----------------------------------------------------------- */
+
+
+#hotels{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 5px;
+}
+#hotels>div{
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+    width:21%;
+}
+#hotels div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+.hotelName {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 21px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hotelDetails{
+text-align: center;
+color:darkgrey;
+}
+
