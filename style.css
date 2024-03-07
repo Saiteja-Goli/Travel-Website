@@ -3,10 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 body {
     font-family: Arial, sans-serif;
+    margin-top: 0;
 }
 
 .navbar {
@@ -16,6 +18,9 @@ body {
     background-color:#7fadcd;
     padding: 10px 20px;
     height: 90px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo img {
@@ -86,6 +91,10 @@ body {
 
 /* ----------------------------------------------------------- */
 
+#text{
+text-align: center;
+margin: 20px 0 20px 0;
+}
 
 #hotels{
     display: flex;
@@ -96,28 +105,108 @@ body {
     margin-top: 5px;
 }
 #hotels>div{
-
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 10px;
-    width:21%;
+    width:25%;
 }
-#hotels div img{
-    width: 100%;
-    height: 100%;
+#hotels div img {
+    width: 100%; /* Allow the width to adjust according to the image's aspect ratio */
+    height: 400px; /* Set a fixed height for the images */
     border-radius: 10px;
-
+    object-fit: cover; /* Ensure images cover the entire container while maintaining aspect ratio */
 }
 
 .hotelName {
-    text-align: center;
-    margin-top: 10px;
+    margin-top:-20px;
     font-size: 21px;
     font-weight: 400;
     margin-bottom: 10px;
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
 }
 
+
 .hotelDetails{
-text-align: center;
-color:darkgrey;
+
+    margin-left: 10px;
+    margin-bottom: 5px;
+    color:darkgrey;
+}
+/* CSS for Image Gallery Buttons */
+.image-container {
+    position: relative;
+    display: block; /* Change display to block */
+    width: 100%; /* Adjust the width as needed */
+}
+
+.prev-button,
+.next-button {
+    display: none; /* Hide the buttons by default */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make the buttons circular */
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smoother hover effect */
+}
+
+.image-container:hover .prev-button,
+.image-container:hover .next-button {
+    display: block; /* Show the buttons on hover */
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker background color on hover */
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.prev-button::before,
+.next-button::before {
+    content: '\2039'; /* Unicode arrow character for previous ('‹') and next ('›') */
+}
+.next-button::before {
+    content: '\203A';
+}
+
+
+.heart-button-container {
+    position: relative;
+    width: 40px; /* Adjust the size of the container as needed */
+    height: 40px; /* Adjust the size of the container as needed */
+}
+
+.heart-button {
+    font-weight:900;
+    position: absolute;
+    top: 500%;
+    left: 900%;
+    transform: translate(-50%, -50%);
+    font-size: 24px; /* Adjust the size as needed */
+    color: black; /* Default color */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none; /* Remove default focus outline */
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+.heart-button.clicked {
+    color: red; /* Change color to red when clicked */
 }
 
