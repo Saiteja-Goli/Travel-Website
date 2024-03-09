@@ -1,4 +1,4 @@
-/* Reset Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -24,13 +24,13 @@ body {
 }
 
 .logo img {
-    height: 50px; /* Adjust height as needed */
+    height: 50px; 
 }
 
 .navbar-items {
     display: flex;
-    justify-content: center;
-    flex-grow: 1;
+    justify-content: space-between;
+
 }
 
 .navbar-item {
@@ -89,6 +89,215 @@ body {
   
   }
 
+ /* Mobile */
+@media only screen and (max-width: 360px) {
+    .navbar {
+        padding: 5px 10px;
+        height: 60px;
+    }
+
+    .navbar-items {
+        flex-direction: column;
+    }
+
+    .navbar-item {
+        margin: 5px 0;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .navbar-item a {
+        font-size: medium;
+    }
+
+    .right-section {
+        display: none;
+    }
+}
+
+/* Tablet */
+.hamburger-icon {
+
+        display: none; 
+
+    }
+
+@media only screen and (min-width: 361px) and (max-width: 768px) {
+    .navbar {
+        padding: 5px 10px;
+        height: 60px;
+    }
+    .navbar-items {
+        border: 3px solid olivedrab;
+        margin-left: -135px;
+        display: none; /* Hide the navigation items by default */
+        background-color: #333; /* Add a background color */
+        margin-top: 200px;
+        padding: 10px; /* Add padding for spacing */
+    }
+    .logo img {
+        height: 140px;
+    }
+    
+    .navbar-item {
+        margin: 5px 0;
+    }
+    
+    .navbar-item a {
+        color: #fff; /* Set text color to white */
+        text-decoration: none; /* Remove underline from links */
+        font-size: 16px;
+    }
+
+    .navbar-items {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-item a {
+        font-size: medium;
+    }
+
+    .right-section {
+        display: none;
+    }
+
+    .hamburger-icon {
+        font-size: 50px;
+        display: block; /* Show the hamburger icon within this media query range */
+        cursor: pointer; /* Add pointer cursor for better UX */
+    }
+
+    .navbar-items.active {
+        display: flex; /* Show the navigation items when active class is added */
+    }
+}
+/* iPhone X */
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+    .navbar {
+        height: 80px;
+        width: 100%; /* Make navbar full width */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-between; /* Space items evenly */
+        align-items: center; /* Center items vertically */
+        padding: 0 20px; /* Add padding for better spacing */
+    }
+
+    body {        width: 100%;
+        margin: 0; /* Remove default body margin */
+    }
+
+    #hotels div {
+        width: 100%;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .navbar-item a {
+        font-size: 14px;
+    }
+
+    .right-section {
+        display: none; /* Hide right section */
+    }
+}
+
+
+/* Laptop */
+@media only screen and (min-width: 769px) and (max-width: 1366px) {
+    .navbar {
+        height: auto;
+    }
+
+    .navbar-items {
+        justify-content: space-evenly;
+        margin-top: 3px; /* Adjust alignment of items */
+        flex-wrap: wrap; 
+    }
+
+    .navbar-item {
+        margin: 0 10px; /* Adjust horizontal margin */
+        text-align: center; /* Center align text */
+        flex: 1 0 auto;
+
+    }
+
+    .logo img {
+        height: 55px;
+    }
+
+    .navbar-item a {
+        font-size: 14px;
+    }
+
+    .right-section {
+
+        display: flex;
+        align-items: center; /* Align items vertically */
+        margin-right: 20px;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1367px) and (max-width: 1920px) {
+    .navbar {
+        height: 90px;
+        padding: 10px;
+    }
+
+    .navbar-items {
+        justify-content:safe;
+        padding: 0 20px;
+    }
+
+    .navbar-item {
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 54px;
+    }
+
+    .navbar-item a {
+        font-size: 16px;
+    }
+
+    .right-section {
+        display: flex;
+    }
+}
+
+/* Large Desktop */
+@media only screen and (min-width: 1921px) {
+    .navbar {
+        height: 110px;
+    }
+
+    .navbar-items {
+        justify-content: space-between;
+    }
+
+    .navbar-item {
+        margin: 0 30px;
+    }
+
+    .logo img {
+        height: 65px;
+    }
+
+    .navbar-item a {
+        font-size:small;
+    }
+
+    .right-section {
+        display: flex;
+    }
+}
+
 /* ----------------------------------------------------------- */
 
 #text{
@@ -105,9 +314,10 @@ margin: 20px 0 20px 0;
     margin-top: 5px;
 }
 #hotels>div{
+    width: 330px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 10px;
-    width:25%;
+    /* width:25%; */
 }
 #hotels div img {
     width: 100%; /* Allow the width to adjust according to the image's aspect ratio */
@@ -117,7 +327,7 @@ margin: 20px 0 20px 0;
 }
 
 .hotelName {
-    margin-top:-20px;
+    margin-top:20px;
     font-size: 21px;
     font-weight: 400;
     margin-bottom: 10px;
@@ -186,27 +396,23 @@ margin: 20px 0 20px 0;
 
 
 .heart-button-container {
-    position: relative;
-    width: 40px; /* Adjust the size of the container as needed */
-    height: 40px; /* Adjust the size of the container as needed */
+    margin-left: 300px;
+    margin-top: -10px;
 }
 
 .heart-button {
     font-weight:900;
-    position: absolute;
-    top: 500%;
-    left: 900%;
+    border: 1px solid red;
     transform: translate(-50%, -50%);
-    font-size: 24px; /* Adjust the size as needed */
-    color: black; /* Default color */
+    font-size: 29px; 
+    color: black; 
     background-color: transparent;
     border: none;
     cursor: pointer;
-    outline: none; /* Remove default focus outline */
-    transition: color 0.3s; /* Smooth transition for color change */
+    transition: color 0.3s; 
 }
 
 .heart-button.clicked {
-    color: red; /* Change color to red when clicked */
+    color: red; 
 }
 
